@@ -651,12 +651,12 @@ class ComPortBox {
     }
 
     private LinkedList<String> getCytonComPorts() {
-        final String[] names = {"FT231X USB UART", "VCP"};
+        // final String[] names = {"FT231X USB UART", "VCP"};
         final SerialPort[] comPorts = SerialPort.getCommPorts();
         LinkedList<String> results = new LinkedList<String>();
         for (SerialPort comPort : comPorts) {
-            for (String name : names) {
-                if (comPort.toString().startsWith(name)) {
+            // for (String name : names) {
+                // if (comPort.toString().startsWith(name)) {
                     // on macos need to drop tty ports
                     if (isMac() && comPort.getSystemPortName().startsWith("tty")) {
                         continue;
@@ -666,8 +666,8 @@ class ComPortBox {
                     found += comPort.getSystemPortName();
                     println("ControlPanel: Found Cyton Dongle on COM port: " + found);
                     results.add(found);
-                }
-            }
+                // }
+            // }
         }
 
         return results;

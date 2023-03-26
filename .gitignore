@@ -19,7 +19,6 @@ OpenBCI_GUI_unittests/UNITTEST_FAILURE
 openbcigui_*
 application.*
 *.autosave
-.vscode/*
 temp/*
 libBoardController.so
 libDataHandler.so
